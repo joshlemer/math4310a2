@@ -14,11 +14,11 @@ function result = diagonalize(A)
             elseif sum(already_used_eigenvalues == eigenvalues(ind)) == 0
                 disp(similarity_matrix)
                 already_used_eigenvalues = [already_used_eigenvalues eigenvalues(ind)]
-                similarity_matrix = blkdiag(similarity_matrix, null(A - eigenvalues(ind) * eye(n)))              
+                similarity_matrix = [similarity_matrix, null(A - eigenvalues(ind) * eye(n))]              
                 disp("good")
                 
             endif
             
             end
-        result = false
+        result = similarity_matrix
         return
