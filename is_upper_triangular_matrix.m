@@ -1,5 +1,8 @@
-function result = is_upper_triangular(A )
+function result = is_upper_triangular_matrix(A )
    [height,width] = size(A)
+   if height * width == 0
+       result = -2
+    endif
    result = 1
    for i = 1:height
        for j = 1:(i-1)
@@ -9,5 +12,10 @@ function result = is_upper_triangular(A )
            endif    
        end
    end
+
+   if height != width
+       result = result - 2
+    endif
+
    endfunction
    

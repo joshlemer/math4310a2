@@ -1,5 +1,14 @@
 function result = is_primitive_matrix(A)
-   
+    [m,n] = size(A)
+    if m*n == 0 || m != n
+        result = -2
+        return
+    endif
+   if has_imaginary_elements(A)
+       result = -3
+       return
+    endif
+    
    #Ensure the matrix is irreducible
     if !is_irreducible_matrix(A)
         result = false
@@ -27,3 +36,4 @@ function result = is_primitive_matrix(A)
     result = true
     return
     
+endfunction

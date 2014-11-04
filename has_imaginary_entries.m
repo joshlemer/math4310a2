@@ -1,4 +1,4 @@
-function result = has_imaginary_elements(A )
+function result = has_imaginary_entries(A )
    [m,n] = size(A)
    if m * n == 0
       result = -2
